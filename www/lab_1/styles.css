@@ -1,0 +1,49 @@
+body
+ {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    background-color: #b8ecf3;
+    margin: 0; /* зовнішній відступ елемента */
+    padding: 20px; /* відстань між вмістом елемента та його границями */
+}
+
+.player
+ {
+    display: flex;
+    justify-content: center; /* центрування елементів по горизонталі */
+    align-items: center; /* центрування елементів по вертикалі */
+    flex-direction: row; /* зміна розташування елементів */
+    margin: 10px;
+}
+
+.card 
+{
+    width: 60px;
+    height: 90px;
+    border: 1px solid #333;
+    border-radius: 5px; /* округлення */
+    background-color: #fff;
+    padding: 5px; 
+    margin: 5px; 
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center; 
+    color: #000000;
+}
+
+.card2 
+{
+    width: 60px;
+    height: 90px;
+    border: 1px solid #333;
+    border-radius: 5px; /* округлення */
+    background-color: #fff;
+    padding: 5px; 
+    margin: 5px; 
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center; 
+    color: #e90000;
+}
