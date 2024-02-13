@@ -1,0 +1,41 @@
+body 
+{
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+ul 
+{
+    width: 37%;
+    list-style: none;
+    padding: 0;
+}
+
+li 
+{
+    padding: 10px;
+    background-color: #f0f8ff;
+}
+
+li:nth-child(odd) 
+{
+    background-color: #00bfff;
+}
+
+li:nth-child(even) 
+{
+    background-color: #90d8f5;
+}
+
+li.checked 
+{
+    background-color: #c9c8c8;
+    text-decoration: line-through;
+}
+
+.cl 
+{
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 65ex;
+}

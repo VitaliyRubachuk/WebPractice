@@ -1,0 +1,33 @@
+
+.table 
+{
+    margin: 0 auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    border-collapse: collapse;
+    width: 500px;
+}
+
+.table td,.table th 
+{
+    border: 6px solid #000000;
+    padding: 5px 10px;
+}
+
+.R
+{
+    min-width: 500px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.q
+{
+    text-align: center;
+    background-color: rgb(112, 185, 185);
+}
+
+.i
+{
+    background-color: rgb(156, 223, 190);
+}
