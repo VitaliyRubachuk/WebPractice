@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Lists</title>
+</head>
+<body>
+    <select name="country" id="country">
+        <option value="ger">Germany</option>
+        <option value="usa">USA</option>
+        <option value="ukr">Ukraine</option>
+    </select>
+
+    <select name="cities" id="cities"></select>
+
+    <p id="selectedInfo"></p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () 
+        {
+            const countrySelect = document.getElementById('country');
+            const citySelect = document.getElementById('cities');
+            const selectedInfo = document.getElementById('selectedInfo');
+
+            const cities = {
+                ger: ["Berlin", "Hamburg", "Munich"],
+                usa: ["New York", "Los Angeles", "Chicago"],
+                ukr: ["Kyiv", "Kharkiv", "Lviv"]
+            };
+
+            countrySelect.addEventListener('change', function ()
+             {
+                const selectedCountry = countrySelect.value;
+                const selectedCities = cities[selectedCountry];
+
+                citySelect.innerHTML = ''; 
+
+                if (selectedCities) {
+                    selectedCities.forEach(city => {
+                        const option = document.createElement('option');
+                        option.value = city;
+                        option.textContent = city;
+                        citySelect.appendChild(option);
+                    });
+                } else {
+                    const option = document.createElement('option');
+                    option.textContent = 'Select a country first';
+                    citySelect.appendChild(option);
+                }
+
+                const selectedCountryName = countrySelect.options[countrySelect.selectedIndex].text;
+                const selectedCity = citySelect.value || 'No city selected';
+
+                selectedInfo.textContent = `Selected country: ${selectedCountryName}, Selected city: ${selectedCity}`;
+            });
+
+            citySelect.addEventListener('change', function () {
+                const selectedCountryName = countrySelect.options[countrySelect.selectedIndex].text;
+                const selectedCity = citySelect.value || 'No city selected';
+                selectedInfo.textContent = `Selected country: ${selectedCountryName}, Selected city: ${selectedCity}`;
+            });
+
+            countrySelect.dispatchEvent(new Event('change'));
+        });
+    </script>
+</body>
+</html>

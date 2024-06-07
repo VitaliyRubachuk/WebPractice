@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons</title>
+    <style>
+        .button 
+        {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid;
+            cursor: pointer;
+        }
+        .rounded-button 
+        {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        class Button {
+            constructor(text, border, color, background)
+             {
+                this.text = text;
+                this.border = border;
+                this.color = color;
+                this.background = background;
+            }
+
+            render() 
+            {
+                const button = document.createElement('button');
+                button.textContent = this.text;
+                button.style.border = this.border;
+                button.style.color = this.color;
+                button.style.background = this.background;
+
+                button.addEventListener('click', () => 
+                {
+                    console.log(`Button ${this.text} pressed. Button color - ${this.background}`);
+                });
+
+                document.body.appendChild(button);
+            }
+        }
+
+        class RoundedButton extends Button 
+        {
+            constructor(text, border, color, background, borderRadius) 
+            {
+                super(text, border, color, background);
+                this.borderRadius = borderRadius;
+            }
+
+            dropShadow() 
+            {
+                const button = document.querySelector('button:last-child');
+                button.style.boxShadow = '5px 5px 10px rgba(0, 0, 0, 0.3)';
+            }
+        }
+
+
+        const button1 = new Button('Regular Button', '2px solid black', 'white', 'blue');
+        const button2 = new Button('Regular Button', '2px solid black', 'white', 'green');
+        const button3 = new Button('Regular Button', '2px solid black', 'white', 'red');
+
+        const roundedButton1 = new RoundedButton('Rounded Button', '2px solid black', 'white', 'blue', '10px');
+        const roundedButton2 = new RoundedButton('Rounded Button', '2px solid black', 'white', 'green', '10px');
+        const roundedButton3 = new RoundedButton('Rounded Button', '2px solid black', 'white', 'red', '10px');
+
+
+        button1.render();
+        button2.render();
+        button3.render();
+
+        roundedButton1.render();
+        roundedButton2.render();
+        roundedButton3.render();
+
+
+        roundedButton1.dropShadow();
+        roundedButton2.dropShadow();
+        roundedButton3.dropShadow();
+    </script>
+</body>
+</html>

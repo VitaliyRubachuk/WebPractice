@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>URL Validation</h2>
+        <p id="result1"></p>
+        <p id="result2"></p>
+        <p id="result3"></p>
+        <p id="result4"></p>
+    </div>
+
+    <script>
+        function isValidURL(url) {
+            const regex = /^(http|https|ftp):\/\/([a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+)(\/[a-zA-Z0-9_]+)*\/?$/;
+            return regex.test(url);
+        }
+
+        let url1 = "https://www.example.com";
+        let url2 = "ftp://fileserver/documents";
+        let url3 = "invalid-url";
+        let url4 = "http://example.com";
+
+        document.getElementById('result1').innerText = `URL 1: ${isValidURL(url1)}`;
+        document.getElementById('result2').innerText = `URL 2: ${isValidURL(url2)}`;
+        document.getElementById('result3').innerText = `URL 3: ${isValidURL(url3)}`;
+        document.getElementById('result4').innerText = `URL 4: ${isValidURL(url4)}`;
+    </script>
+</body>
+</html>

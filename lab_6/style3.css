@@ -1,0 +1,80 @@
+.pricing-table 
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .pricing-plan 
+  {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 20%;
+  }
+  
+  .pricing-plan:hover 
+  {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+  }
+  
+  .pricing-header 
+  {
+    background-color: #333;
+    color: #fff;
+    font-size: 1.25em;
+    padding: 1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .pricing-amount 
+  {
+    color: #446688;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  .pricing-duration 
+  {
+    background-color: #ddd;
+    color: #333;
+    font-size: 0.8em;
+    padding: 0.5em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .pricing-features 
+  {
+    padding: 1em;
+  }
+  
+  .pricing-feature 
+  {
+    color: #666;
+    font-size: 0.9em;
+    padding: 0.5em 0;
+  }
+  
+  .buy-button 
+  {
+    background-color: #333;
+    border: none;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  
+  .buy-button:hover 
+  {
+    background-color: #446688;
+  }

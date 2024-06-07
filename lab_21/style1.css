@@ -1,0 +1,199 @@
+.modal 
+{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content 
+{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px; 
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 80%; 
+    max-width: 1000px;
+}
+
+.close 
+{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 40px;
+    width: 100%; 
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    right: 0; 
+}
+
+
+header h1
+ {
+    margin: 0;
+
+}
+
+header button 
+{
+    background-color: #557456;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+header button:hover 
+{
+    background-color: #45a049;
+}
+
+.container 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 100px; 
+}
+
+
+.product-card 
+{
+    position: relative;
+    width: calc(30% - 20px);
+    max-width: 200px; 
+    height: 350px;
+    margin-bottom: 30px; 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 116px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: #fff; 
+    text-align: center;
+}
+
+
+
+.product-card:hover 
+{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.product-card h2
+ {
+    margin-top: 0;
+    font-size: 18px;
+
+    margin-bottom: 10px;
+    color: #333; 
+}
+
+
+.product-card p 
+{
+    
+    margin: 0;
+    margin-bottom: 5px;
+    color: #666; 
+}
+
+.product-card img 
+{
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover; 
+}
+
+.close-btn 
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #aaa;
+    z-index: 1;
+    display: none; 
+}
+
+.product-card:hover .close-btn
+ {
+
+    display: block;
+}
+
+.close-btn:hover 
+{
+    color: black;
+}
+
+.discount-flag 
+{
+    position: absolute;
+    top: 40%; 
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+
+#productForm input[type="text"],
+#productForm input[type="url"],
+#productForm textarea,
+#productForm input[type="number"] 
+{
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.edit-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #557456;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .product-card:hover .edit-btn {
+    display: block;
+  }

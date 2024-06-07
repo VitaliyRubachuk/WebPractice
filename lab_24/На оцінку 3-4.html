@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання з jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        h2.head {
+            margin: 10px 0;
+        }
+        h3 {
+            margin: 20px 0 5px;
+        }
+        div {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Завдання 1 -->
+    <a href="https://example.com">Посилання на HTTPS</a>
+    <a href="http://example.com">Посилання на HTTP</a>
+
+    <!-- Завдання 2 -->
+    <h2 class="head">header1</h2>
+    <h2 class="head">header2 <span class="inner">inner elem1</span></h2>
+    <h2>header3</h2>
+    <h2 class="head">header4 <span class="inner">inner elem2</span></h2>
+    <h2>header5</h2>
+
+    <!-- Завдання 3 -->
+    <h3>header1</h3>
+    <div>text1</div>
+    <h3>header2</h3>
+    <div>text2</div>
+
+    <!-- Завдання 4 -->
+    <label><input type="checkbox"> Чекбокс 1</label>
+    <label><input type="checkbox"> Чекбокс 2</label>
+    <label><input type="checkbox"> Чекбокс 3</label>
+    <label><input type="checkbox"> Чекбокс 4</label>
+    <label><input type="checkbox"> Чекбокс 5</label>
+    <label><input type="checkbox"> Чекбокс 6</label>
+
+    <script>
+        // Завдання 1
+        $('a[href^="https://"]').attr('target', '_blank');
+
+        // Завдання 2
+        $('h2.head').css('background-color', 'green').find('.inner').css('font-size', '35px');
+
+        // Завдання 3
+        $('h3 + div').each(function() {
+            $(this).prev('h3').before($(this));
+        });
+
+        // Завдання 4
+        $('input[type="checkbox"]').on('change', function() {
+            if ($('input[type="checkbox"]:checked').length >= 3) {
+                $('input[type="checkbox"]').attr('disabled', true);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Information</title>
+</head>
+<body>
+    <script>
+        function Car(brand, model, year) 
+        {
+            this.brand = brand;
+            this.model = model;
+            this.year = year;
+        }
+
+        Car.prototype.displayInfo = function () 
+        {
+            console.log(`Car: ${this.brand} ${this.model}, Year: ${this.year}`);
+        };
+
+        Car.prototype.drive = function ()
+         {
+            console.log("Driving started...");
+        };
+
+
+        const car1 = new Car('Toyota', 'Camry', 2020);
+        const car2 = new Car('Honda', 'Accord', 2018);
+        const car3 = new Car('Ford', 'Mustang', 2019);
+
+
+        car1.displayInfo();
+        car1.drive();
+
+        car2.displayInfo();
+        car2.drive();
+
+        car3.displayInfo();
+        car3.drive();
+    </script>
+</body>
+</html>

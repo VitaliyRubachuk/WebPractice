@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style1.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>eShop</h1>
+    <button id="createProductBtn">Create Product</button>
+  </header>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id="productForm">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" required></textarea><br>
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" name="price" min="0" required><br>
+        <label for="discount">Discount:</label><br>
+        <input type="number" id="discount" name="discount" min="0"><br>
+        <label for="category">Category:</label><br>
+        <input type="text" id="category" name="category" required><br>
+        <label for="image">Image:</label><br>
+        <input type="url" id="image" name="image" required><br>
+        <input type="submit" value="Save Product">
+      </form>
+    </div>
+  </div>
+
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeEditModal()">&times;</span>
+      <form id="editProductForm">
+        <label for="editTitle">Title:</label><br>
+        <input type="text" id="editTitle" name="editTitle" required><br>
+        <label for="editDescription">Description:</label><br>
+        <textarea id="editDescription" name="editDescription" required></textarea><br>
+        <label for="editPrice">Price:</label><br>
+        <input type="number" id="editPrice" name="editPrice" min="0" required><br>
+        <label for="editDiscount">Discount:</label><br>
+        <input type="number" id="editDiscount" name="editDiscount" min="0"><br>
+        <label for="editCategory">Category:</label><br>
+        <input type="text" id="editCategory" name="editCategory" required><br>
+        <label for="editImage">Image:</label><br>
+        <input type="url" id="editImage" name="editImage" required><br>
+        <input type="submit" value="Save Changes">
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <form id="filterForm">
+      <label for="filterCategory">Filter by Category:</label>
+      <input type="text" id="filterCategory" name="filterCategory">
+      <label for="searchTerm">Search:</label>
+      <input type="text" id="searchTerm" name="searchTerm">
+      <label for="sortMethod">Sort by:</label>
+      <select id="sortMethod" name="sortMethod">
+        <option value="none">None</option>
+        <option value="priceAsc">Price: Low to High</option>
+        <option value="priceDesc">Price: High to Low</option>
+        <option value="nameAsc">Name: A to Z</option>
+        <option value="nameDesc">Name: Z to A</option>
+      </select>
+      <input type="submit" value="Apply">
+    </form>
+  </div>
+
+  <div class="container" id="productContainer">
+  </div>
+
+  <script src="scrypt1.js"></script>
+  <script src="your-jquery-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .container form {
+            margin-top: 20px;
+        }
+
+        .container input[type="text"],
+        .container input[type="submit"] {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Validation</h1>
+        <form id="emailForm">
+            <label for="email">Enter your email:</label><br>
+            <input type="text" id="email" name="email" required><br>
+            <input type="submit" value="Check Email">
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const emailForm = document.getElementById('emailForm');
+        const resultMessage = document.getElementById('result');
+
+        emailForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const isValid = checkEmail(email);
+            if (isValid) {
+                resultMessage.textContent = 'Email is correct!';
+                resultMessage.style.color = 'green';
+            } else {
+                resultMessage.textContent = 'Email is not correct!';
+                resultMessage.style.color = 'red';
+            }
+        });
+
+        function checkEmail(email) 
+        {
+
+            const regex = /^[a-zA-Z0-9]+[a-zA-Z0-9._-]*@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            return regex.test(email);
+        }
+    </script>
+</body>
+</html>

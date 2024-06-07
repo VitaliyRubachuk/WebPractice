@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-камера</title>
+    <link rel="stylesheet" href="2.css"> 
+</head>
+<body>
+  <div class="overlay">
+    <div class="modal-window">
+      <div class="header">
+        <span class="title">Додати веб-камеру</span>
+        <button class="close-button">&times;</button>
+      </div>
+      <div class="content">
+        <div class="input-field">
+          <label for="cupName">Виробник-модель:</label>
+          <input type="text" id="cupName" placeholder="Введіть назву:">
+        </div>
+        <div class="input-field">
+          <label for="cupVolume">Інтерфейс підключення:</label>
+          <input type="text" id="cupName" placeholder="Введіть назву підключення:">
+        </div>
+        <div class="input-field">
+          <label for="cupMaterial">Роздільна здатність відео:</label>
+          <select id="cupMaterial">
+            <option value="glass">360p</option>
+            <option value="glass">720p</option>
+            <option value="glass">1080p</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <label for="cupName">Частота кадрів:</label>
+          <input type="text" id="cupName" placeholder="Введіть частоту кадрів:">
+        </div>
+        <div class="input-field">
+          <label for="cupName">Кут огляду:</label>
+          <input type="text" id="cupName" placeholder="Введіть кут огляду:">
+        </div>
+        <div class="input-image">
+          <img src="" alt="image" class="cup-image" id="cupPreview">
+          <input type="file" id="cupImage" accept="image/*" onchange="previewImage()">
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="cancel-button">Cancel</button>
+        <button class="confirm-button">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function previewImage() 
+    {
+      const preview = document.getElementById('cupPreview');
+      const fileInput = document.getElementById('cupImage');
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+
+      reader.onloadend = function () {
+        preview.src = reader.result;
+      }
+
+      if (file) 
+      {
+        reader.readAsDataURL(file);
+      } else 
+      {
+        preview.src = "";
+      }
+    }
+  </script>
+</body>
+</html>

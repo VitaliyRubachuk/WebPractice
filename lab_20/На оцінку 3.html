@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Validation</title>
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container 
+        {
+            text-align: center;
+        }
+
+        input[type="text"]
+         {
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        button 
+        {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Credit Card Validation</h2>
+    <input type="text" id="cardNumber" placeholder="Enter your credit card number">
+    <br>
+    <button onclick="validateCardNumber()">Validate</button>
+    <p id="result"></p>
+</div>
+
+<script>
+    function validateCardNumber() 
+    {
+        const cardNumber = document.getElementById('cardNumber').value;
+        const regex = /^(4|5)\d{15}$/;
+
+        if (regex.test(cardNumber)) {
+            document.getElementById('result').innerText = 'Valid credit card number';
+        } else {
+            document.getElementById('result').innerText = 'Invalid credit card number';
+        }
+    }
+</script>
+
+</body>
+</html>
